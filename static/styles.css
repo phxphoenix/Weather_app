@@ -1,0 +1,262 @@
+﻿:root {
+  --bg: #0f2027;
+  --bg-2: #203a43;
+  --bg-3: #2c5364;
+  --surface: #f7fbff;
+  --surface-2: #eef6ff;
+  --accent: #ffb347;
+  --accent-2: #ffcc80;
+  --ink: #1a2b3b;
+  --muted: #5a6b7d;
+  --shadow: rgba(15, 32, 39, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: radial-gradient(circle at 20% 10%, rgba(255, 255, 255, 0.15), transparent 45%),
+    linear-gradient(135deg, var(--bg) 0%, var(--bg-2) 40%, var(--bg-3) 100%);
+  min-height: 100vh;
+}
+
+.page {
+  padding: 32px 20px 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 32px;
+  align-items: stretch;
+  margin-bottom: 32px;
+}
+
+.hero__copy h1 {
+  font-family: "Fraunces", serif;
+  font-size: clamp(2.4rem, 3vw, 3.4rem);
+  color: #fdf6ee;
+  margin: 12px 0 12px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0;
+}
+
+.lead {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 520px;
+}
+
+.hero__card {
+  background: var(--surface);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 18px 40px var(--shadow);
+}
+
+.card__title {
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--muted);
+}
+
+.search label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.search__row {
+  display: flex;
+  gap: 12px;
+  margin: 10px 0 12px;
+}
+
+.search input {
+  flex: 1;
+  border: 1px solid #d7e2ee;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 1rem;
+}
+
+.search button {
+  border: none;
+  border-radius: 12px;
+  padding: 12px 16px;
+  background: var(--accent);
+  color: #3f2a00;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.search button:hover {
+  background: var(--accent-2);
+}
+
+.search select {
+  width: 100%;
+  min-height: 180px;
+  border-radius: 16px;
+  border: 1px solid #d7e2ee;
+  padding: 10px;
+  font-size: 1rem;
+  background: #fff;
+}
+
+.hint {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+.content {
+  display: grid;
+  gap: 24px;
+}
+
+.panel {
+  background: var(--surface);
+  border-radius: 28px;
+  padding: 26px;
+  box-shadow: 0 20px 60px var(--shadow);
+}
+
+.panel__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.panel__header h2 {
+  margin: 0 0 8px;
+  font-size: 1.6rem;
+}
+
+.panel__meta {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 20px 0 12px;
+}
+
+.day-pill {
+  background: var(--surface-2);
+  border-radius: 999px;
+  padding: 8px 12px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.meteogram {
+  position: relative;
+  background: #fff;
+  border-radius: 18px;
+  padding: 12px;
+  border: 1px solid #e1e9f3;
+  overflow-x: auto;
+  min-height: 240px;
+}
+
+.meteogram img {
+  max-height: 420px;
+  display: none;
+}
+
+.meteogram img.is-visible {
+  display: block;
+}
+
+.placeholder {
+  position: absolute;
+  inset: 12px;
+  display: grid;
+  place-items: center;
+  border: 1px dashed #d7e2ee;
+  border-radius: 14px;
+  color: var(--muted);
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.tips {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.tip {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 18px;
+  color: #f8f4ef;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.tip h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 960px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .page {
+    padding: 20px 16px 40px;
+  }
+
+  .panel {
+    padding: 18px;
+  }
+
+  .days {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tips {
+    grid-template-columns: 1fr;
+  }
+
+  .meteogram img {
+    max-height: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .search__row {
+    flex-direction: column;
+  }
+
+  .hero__card {
+    padding: 18px;
+  }
+
+  .meteogram {
+    min-height: 200px;
+  }
+}
