@@ -91,6 +91,7 @@ body {
   border-radius: 12px;
   padding: 12px 14px;
   font-size: 1rem;
+  min-height: 44px;
 }
 
 .search button {
@@ -101,6 +102,7 @@ body {
   color: #3f2a00;
   font-weight: 700;
   cursor: pointer;
+  min-height: 44px;
 }
 
 .search button:hover {
@@ -176,12 +178,14 @@ body {
   padding: 12px;
   border: 1px solid #e1e9f3;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   min-height: 240px;
 }
 
 .meteogram img {
   max-height: 420px;
   display: none;
+  max-width: none;
 }
 
 .meteogram img.is-visible {
@@ -258,5 +262,37 @@ body {
 
   .meteogram {
     min-height: 200px;
+  }
+}
+
+@media (max-width: 430px) {
+  .hero__copy h1 {
+    font-size: 2.05rem;
+  }
+
+  .lead {
+    font-size: 0.98rem;
+  }
+
+  .search select {
+    min-height: 160px;
+  }
+
+  .panel__header h2 {
+    font-size: 1.35rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .hero__copy h1 {
+    font-size: 1.85rem;
+  }
+
+  .day-pill {
+    font-size: 0.82rem;
+  }
+
+  .meteogram img {
+    max-height: 280px;
   }
 }
