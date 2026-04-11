@@ -42,6 +42,28 @@ python web_app.py
    - Start Command: `gunicorn web_app:app`
 4. Po wdrożeniu Render poda link do aplikacji.
 
+## GitHub CLI: szybka ściąga (commit → push → PR)
+
+### Najprostszy wariant (na main)
+
+```
+git status
+git add .
+git commit -m "Opis zmian"
+git push
+gh pr create --base main --head main --title "Opis zmian" --body "Krótki opis tego, co zmieniono."
+```
+
+### Lepszy wariant (osobna gałąź)
+
+```
+git checkout -b feature/nazwa
+git add .
+git commit -m "Opis zmian"
+git push -u origin feature/nazwa
+gh pr create --base main --head feature/nazwa --title "Opis zmian" --body "Krótki opis tego, co zmieniono."
+```
+
 ## Skąd dane
 Aplikacja pobiera meteogramy z ICM (meteo.pl) i prezentuje je jako prognozę na kolejne dni.
 
